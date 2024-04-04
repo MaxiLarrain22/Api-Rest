@@ -1,12 +1,14 @@
-import {config} from 'dotenv'
+const { config } = require('dotenv');
+
 
 config()
 
-export const PORT=(process.env.PORT)||3000
+module.exports.PORT = (process.env.PORT) || 3000;
 
 
-export const DB_HOST=(process.env.DB_HOST)||"localhost"
-export const DB_DATABASE=(process.env.DB_DATABASE)||"proyecto1"
-export const DB_USER=(process.env.DB_USER)||"root"
-export const DB_PASSWORD=(process.env.DB_PASSWORD)||""
-export const DB_PORT=(process.env.DB_PORT)||"3306"
+
+module.exports.DB_HOST = (process.env.DB_HOST) || "localhost";
+module.exports.DB_DATABASE=(process.env.DB_DATABASE)||"proyecto1"
+module.exports.DB_USER=(process.env.DB_USER)||"root"
+module.exports.DB_PASSWORD=(process.env.DB_PASSWORD)||""
+module.exports.DB_PORT=(process.env.DB_PORT)||"3306"
