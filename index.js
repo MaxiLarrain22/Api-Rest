@@ -1,8 +1,10 @@
-// Esto es un ENTRY POINT
+
+//Esto es un ENTRY POINT
 require('dotenv').config();
 
 const express = require('express');
 const app = express();
+app.use(express.json());
 const path = require("path");
 const layouts = require("express-ejs-layouts");
 // Configuración del servidor de archivos estáticos
@@ -19,11 +21,11 @@ app.set('layout','layouts/layout')
 // Importación de rutas
 const mainRouter = require('./src/routes/main.router');
 const productosRouter = require('./src/routes/productos.router');
-
+const pacientesroute=require('./src/routes/pacientes.route.js')
 // Uso de las rutas importadas
 app.use(mainRouter);
 app.use(productosRouter);
-
+app.use("/api/",pacientesroute)
 // Puerto del servidor
 const PORT = process.env.PORT || 3001;
 
